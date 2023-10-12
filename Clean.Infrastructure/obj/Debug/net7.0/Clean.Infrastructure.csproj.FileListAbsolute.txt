@@ -1,0 +1,11 @@
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\bin\Debug\net7.0\Clean.Infrastructure.deps.json
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\bin\Debug\net7.0\Clean.Infrastructure.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\bin\Debug\net7.0\Clean.Infrastructure.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\Clean.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\Clean.Infrastructure.AssemblyInfoInputs.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\Clean.Infrastructure.AssemblyInfo.cs
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\Clean.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\Clean.Infrastructure.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\refint\Clean.Infrastructure.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\Clean.Infrastructure.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Infrastructure\obj\Debug\net7.0\ref\Clean.Infrastructure.dll

@@ -1,0 +1,15 @@
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\bin\Debug\net7.0\Clean.Application.deps.json
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\bin\Debug\net7.0\Clean.Application.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\bin\Debug\net7.0\Clean.Application.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\bin\Debug\net7.0\Clean.Domain.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\bin\Debug\net7.0\Clean.Domain.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.csproj.AssemblyReference.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.AssemblyInfoInputs.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.AssemblyInfo.cs
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.csproj.CoreCompileInputs.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.csproj.CopyComplete
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\refint\Clean.Application.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\Clean.Application.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Application\obj\Debug\net7.0\ref\Clean.Application.dll

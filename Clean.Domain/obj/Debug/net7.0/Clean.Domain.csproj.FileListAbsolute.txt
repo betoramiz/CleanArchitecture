@@ -1,0 +1,12 @@
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\bin\Debug\net7.0\Clean.Domain.deps.json
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\bin\Debug\net7.0\Clean.Domain.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\bin\Debug\net7.0\Clean.Domain.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.csproj.AssemblyReference.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.AssemblyInfoInputs.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.AssemblyInfo.cs
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\refint\Clean.Domain.dll
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\Clean.Domain.pdb
+C:\Projects\NetCore\API\CleanArchitecture\Clean.Domain\obj\Debug\net7.0\ref\Clean.Domain.dll
