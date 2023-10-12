@@ -1,23 +1,45 @@
-﻿using Clean.Domain;
+﻿using Clean.Application.Data;
 using MediatR;
 using ErrorOr;
+using FluentValidation;
+using DomainCourse = Clean.Domain.Course;
 
 namespace Clean.Application.Course;
 
 public class Create
 {
-    public record Command(int Id) : IRequest<ErrorOr<Response>>;
+    public record Command(string Name) : IRequest<ErrorOr<Response>>;
 
     public record Response(int Id);
+    
+    public class CommandValidator : AbstractValidator<Command>
+    {
+        public CommandValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty().MaximumLength(100);
+        }
+    }
 
     public class CommandHandler : IRequestHandler<Command, ErrorOr<Response>>
     {
-        private readonly CleanArchContext _context;
-        public CommandHandler(CleanArchContext context) => _context = context;
+        private readonly ICleanArchitectureContext _context;
+        public CommandHandler(ICleanArchitectureContext context) => _context = context;
 
         public async Task<ErrorOr<Response>> Handle(Command request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var validator = new CommandValidator();
+            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+            if (!validationResult.IsValid)
+                return new ErrorOr<Response>();
+            
+            var newCourse = DomainCourse.Course.Create(request.Name);
+            if (newCourse.IsError)
+                return new ErrorOr<Response>();
+            
+            _context.Courses.Add(newCourse.Value);
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return new Response(newCourse.Value.Id);
         }
     }
 }
