@@ -11,8 +11,8 @@ public class Create
     public record Command(string Name) : IRequest<ErrorOr<Response>>;
 
     public record Response(int Id);
-    
-    public class CommandValidator : AbstractValidator<Command>
+
+    private class CommandValidator : AbstractValidator<Command>
     {
         public CommandValidator()
         {
