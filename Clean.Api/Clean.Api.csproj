@@ -25,6 +25,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Clean.Application\Clean.Application.csproj" />
+      <ProjectReference Include="..\Clean.Infrastructure\Clean.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

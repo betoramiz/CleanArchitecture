@@ -6,7 +6,7 @@ namespace Clean.Api.Controllers
 {
     [Route("api/course")]
     [ApiController]
-    public class CourseController : ControllerBase
+    public class CourseController : ApiController
     {
         private readonly ISender _mediator;
 
@@ -20,6 +20,14 @@ namespace Clean.Api.Controllers
                 Ok,
                 error => Problem(error.First().Description)
             );
+        }
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var request = new GetCourseById.Query(id);
+            var result = await _mediator.Send(request);
+            return result.Match(Ok, Problem);
         }
     }
 }
