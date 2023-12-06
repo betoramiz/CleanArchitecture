@@ -9,7 +9,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("");
+        var connectionString = configuration.GetConnectionString("Connection");
         services.AddDbContext<CleanArchContext>(options =>
         {
             options.UseSqlServer(connectionString, x => x.MigrationsAssembly("Clean.Infrastructure"));
