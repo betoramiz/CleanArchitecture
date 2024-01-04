@@ -20,8 +20,8 @@ public class GetCourseById
         {
             var course = await _context
                 .Courses
-                .Select(c => new Response(c.Id, c.Name))
                 .Where(course => course.Id == request.Id)
+                .Select(c => new Response(c.Id, c.Name))
                 .FirstOrDefaultAsync(cancellationToken);
 
             if (course is null)

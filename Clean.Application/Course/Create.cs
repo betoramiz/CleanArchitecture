@@ -33,8 +33,6 @@ public class Create
                 return new ErrorOr<Response>();
             
             var newCourse = DomainCourse.Course.Create(request.Name);
-            if (newCourse.IsError)
-                return DomainCourse.CourseErrors.CourseNameEmpty;
             
             _context.Courses.Add(newCourse.Value);
             await _context.SaveChangesAsync(cancellationToken);
