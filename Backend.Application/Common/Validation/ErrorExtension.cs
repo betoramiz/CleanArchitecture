@@ -1,7 +1,7 @@
 ﻿using ErrorOr;
 using FluentValidation.Results;
 
-namespace MilaSaaS.Application.Common.Validation;
+namespace Backend.Application.Common.Validation;
 
 public static class ErrorExtension
 {

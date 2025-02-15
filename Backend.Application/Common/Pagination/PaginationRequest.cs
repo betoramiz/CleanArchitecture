@@ -1,4 +1,4 @@
-﻿namespace MilaSaaS.Application.Common.Pagination;
+﻿namespace Backend.Application.Common.Pagination;
 
 public class PaginationRequest
 {
