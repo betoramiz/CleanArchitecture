@@ -1,5 +1,6 @@
 using Backend.Infrastructure.Interceptors;
 using Backend.Application.Data;
+using Backend.Infrastructure.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
