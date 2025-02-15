@@ -5,35 +5,34 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Backend.Infrastructure.Interceptors;
 
-public class DispatchDomainEventsInterceptor: SaveChangesInterceptor
+public class DispatchDomainEventsInterceptor(IPublisher publisher) : SaveChangesInterceptor
 {
-    private readonly IPublisher _publisher;
-    public DispatchDomainEventsInterceptor(IPublisher publisher) => _publisher = publisher;
+    private readonly IPublisher _publisher = publisher;
 
-    public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result,
+    public override ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result,
         CancellationToken cancellationToken = new CancellationToken())
     {
-        if (eventData.Context is not null)
-            await DispatchDomainEvents(eventData.Context);
+        if(eventData.Context is not null)
+            DispatchEvents(eventData.Context);
         
-        return await base.SavingChangesAsync(eventData, result, cancellationToken);
+        return base.SavingChangesAsync(eventData, result, cancellationToken);
     }
 
-    private async Task DispatchDomainEvents(DbContext context)
+    private void DispatchEvents(DbContext context)
     {
-        var domainEvents = context.ChangeTracker
+        var entities = context
+            .ChangeTracker
             .Entries<Entity>()
-            .Where(e => e.Entity.DomainEvents.Any())
-            .SelectMany(e =>
-            {
-                var events = new List<IDomainEvent>();
-                events.AddRange(e.Entity.DomainEvents);
-                e.Entity.DomainEvents.Clear();
-                return events;
-            })
+            .Where(entity => entity.Entity.DomainEvents.Any())
+            .Select(e => e.Entity);
+
+        var domainEvents = entities
+            .SelectMany(e => e.DomainEvents)
             .ToList();
-            
+        
+        entities.ToList().ForEach(e => e.ClearEvents());
+
         foreach (var domainEvent in domainEvents) 
-            await _publisher.Publish(domainEvent);
+            _publisher.Publish(domainEvent);
     }
 }
