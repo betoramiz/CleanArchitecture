@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using DomainCourse = Backend.Domain.Course;
 
-namespace Backend.Infrastructure.Course;
+namespace Backend.Infrastructure.Configurations;
 
-public class Configuration: IEntityTypeConfiguration<DomainCourse.Course>
+public class CourseConfiguration: IEntityTypeConfiguration<DomainCourse.Course>
 {
     public void Configure(EntityTypeBuilder<DomainCourse.Course> builder)
     {

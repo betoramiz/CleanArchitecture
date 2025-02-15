@@ -1,4 +1,5 @@
 ﻿using Backend.Application.Data;
+using Backend.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Infrastructure.Common;
@@ -12,7 +13,7 @@ public class CleanArchContext: DbContext ,ICleanArchitectureContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new Course.Configuration());
+        modelBuilder.ApplyConfiguration(new CourseConfiguration());
         
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CleanArchContext).Assembly);
     }
