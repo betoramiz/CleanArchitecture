@@ -1,8 +1,8 @@
 ﻿using Backend.Application.Data;
-using Backend.Infrastructure.Configurations;
+using Backend.Infrastructure.Persistance.Configurations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Infrastructure.Common;
+namespace Backend.Infrastructure.Persistance;
 
 public class CleanArchContext: DbContext ,ICleanArchitectureContext
 {
