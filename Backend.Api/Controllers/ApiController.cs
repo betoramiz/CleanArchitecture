@@ -1,12 +1,27 @@
+using System.Text.Json;
 using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using MilaSaaS.Application.Common.Pagination;
 
 namespace Backend.Api.Controllers
 {
     [ApiController]
     public class ApiController : ControllerBase
     {
+        protected IActionResult PaginatedResult<T>(PaginationResponse<T> result) where T: class
+        {
+            var metadata = new
+            {
+                result.HasNext,
+                result.HasPrevious,
+                result.CurrentPage,
+                result.TotalPages,
+                result.TotalItems
+            }; 
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(metadata));
+            return Ok(result.Items);
+        }
         protected IActionResult Problem(List<Error> errors)
         {
             if (errors.Count is 0)
