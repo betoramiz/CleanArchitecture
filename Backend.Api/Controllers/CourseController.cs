@@ -1,4 +1,4 @@
-using Backend.Application.Course;
+using Backend.Application.Features.Course;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

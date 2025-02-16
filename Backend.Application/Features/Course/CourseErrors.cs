@@ -1,6 +1,6 @@
 using ErrorOr;
 
-namespace Backend.Application.Course;
+namespace Backend.Application.Features.Course;
 
 public static class CourseErrors
 {

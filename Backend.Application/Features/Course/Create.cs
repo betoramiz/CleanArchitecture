@@ -1,10 +1,10 @@
 ﻿using Backend.Application.Data;
-using MediatR;
 using ErrorOr;
 using FluentValidation;
+using MediatR;
 using DomainCourse = Backend.Domain.Course;
 
-namespace Backend.Application.Course;
+namespace Backend.Application.Features.Course;
 
 public class Create
 {

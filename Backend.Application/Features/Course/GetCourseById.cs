@@ -1,9 +1,7 @@
 using Backend.Application.Data;
-using MediatR;
-using ErrorOr;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Application.Course;
+namespace Backend.Application.Features.Course;
 
 public class GetCourseById
 {

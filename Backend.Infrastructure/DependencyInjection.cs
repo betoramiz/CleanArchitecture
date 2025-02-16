@@ -27,7 +27,7 @@ public static class DependencyInjection
     private static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         var thisAssembly = Assembly.GetExecutingAssembly().GetName().Name;
-        var connectionString = configuration.GetConnectionString("Connection");
+        var connectionString = configuration.GetConnectionString("ConnectionString");
         services.AddDbContext<CleanArchContext>((sp, options) =>
         {
             options.AddInterceptors(sp.GetService<ISaveChangesInterceptor>());

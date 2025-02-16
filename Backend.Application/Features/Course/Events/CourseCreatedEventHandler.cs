@@ -3,7 +3,7 @@ using Backend.Domain.Course.Events;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Application.Course.Events;
+namespace Backend.Application.Features.Course.Events;
 
 public class CourseCreatedEventHandler: INotificationHandler<CourseCreatedEvent>
 {
