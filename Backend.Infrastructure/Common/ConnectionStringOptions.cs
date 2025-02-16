@@ -2,6 +2,6 @@
 
 public class ConnectionStringOptions
 {
-    public const string Option = "ConnectionString";
+    public const string Option = "ConnectionStrings";
     public string ConnectionString { get; set; } = string.Empty;
 }

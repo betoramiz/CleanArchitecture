@@ -1,3 +1,4 @@
+using Backend.Application.Common.Interfaces;
 using Backend.Application.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,19 +12,14 @@ public class GetCourseById
 
     public class CommandHandler : IRequestHandler<Query, ErrorOr<Response>>
     {
-        private readonly ICleanArchitectureContext _context;
-        public CommandHandler(ICleanArchitectureContext context) => _context = context;
+        private readonly ICourseRepository _repository;
+
+        public CommandHandler(ICourseRepository repository) => _repository = repository;
+
 
         public async Task<ErrorOr<Response>> Handle(Query request, CancellationToken cancellationToken)
         {
-            var course = await _context
-                .Courses
-                .Where(course => course.Id == request.Id)
-                .Select(c => new Response(c.Id, c.Name))
-                .FirstOrDefaultAsync(cancellationToken);
-
-            if (course is null)
-                return CourseErrors.CourseNotFound;
+            var course = await _repository.GetSomeDataAsync();
 
             return course;
         }

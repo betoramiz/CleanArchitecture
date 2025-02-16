@@ -1,12 +1,16 @@
 using System.Reflection;
+using Backend.Application.Common.Interfaces;
 using Backend.Infrastructure.Interceptors;
 using Backend.Application.Data;
 using Backend.Infrastructure.Common;
-using Backend.Infrastructure.Persistance;
+using Backend.Infrastructure.Persistence;
+using Backend.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Protocols;
 
 namespace Backend.Infrastructure;
 
@@ -14,12 +18,15 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.Configure<ConnectionStringOptions>(configuration.GetSection("ConnectionString"));
         
         services.AddPersistence(configuration);
         
+        services.Configure<ConnectionStringOptions>(configuration.GetSection(ConnectionStringOptions.Option));
+        
         services.AddScoped<ICleanArchitectureContext>(serviceProvider => serviceProvider.GetRequiredService<CleanArchContext>());
         services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
+
+        services.AddScoped<ICourseRepository, CourseRepository>();
 
         return services;
     }
