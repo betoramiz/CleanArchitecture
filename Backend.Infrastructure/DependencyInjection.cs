@@ -9,8 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Protocols;
 
 namespace Backend.Infrastructure;
 
@@ -20,6 +18,8 @@ public static class DependencyInjection
     {
         
         services.AddPersistence(configuration);
+
+        services.Scan(selector => selector.FromAssemblyOf<IRepository>().AddClasses(classSelector => classSelector.AssignableTo<Repository>()));
         
         services.Configure<ConnectionStringOptions>(configuration.GetSection(ConnectionStringOptions.Option));
         

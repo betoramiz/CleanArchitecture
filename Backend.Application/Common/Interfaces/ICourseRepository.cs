@@ -2,7 +2,7 @@
 
 namespace Backend.Application.Common.Interfaces;
 
-public interface ICourseRepository
+public interface ICourseRepository: IRepository
 {
     public Task<ErrorOr<GetCourseById.Response>> GetSomeDataAsync();
 }
