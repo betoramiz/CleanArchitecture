@@ -19,7 +19,7 @@ public static class DependencyInjection
         
         services.AddPersistence(configuration);
 
-        services.Scan(selector => selector.FromAssemblyOf<IRepository>().AddClasses(classSelector => classSelector.AssignableTo<Repository>()));
+        services.Scan(selector => selector.FromAssemblyOf<IRepository>().AddClasses(classSelector => classSelector.InNamespaces().AssignableTo<Repository>()));
         
         services.Configure<ConnectionStringOptions>(configuration.GetSection(ConnectionStringOptions.Option));
         
