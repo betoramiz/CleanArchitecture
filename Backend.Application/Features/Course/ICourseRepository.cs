@@ -1,6 +1,6 @@
-﻿using Backend.Application.Features.Course;
+﻿using Backend.Application.Common.Interfaces;
 
-namespace Backend.Application.Common.Interfaces;
+namespace Backend.Application.Features.Course;
 
 public interface ICourseRepository: IRepository
 {
