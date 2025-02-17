@@ -1,5 +1,4 @@
-﻿using ErrorOr;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 
 namespace Backend.Application.Common.Validation;
 

@@ -1,7 +1,3 @@
-using Backend.Application.Common.Interfaces;
-using Backend.Application.Data;
-using Microsoft.EntityFrameworkCore;
-
 namespace Backend.Application.Features.Course;
 
 public class GetCourseById
